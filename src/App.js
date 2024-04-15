@@ -6,6 +6,11 @@ import SignUp from "./pages/sign-up";
 import SignIn from "./pages/sign-in";
 import Doctors from "./pages/doctors";
 import HealtyServices from "./pages/healty-services";
+import MyPatient from "./pages/my-patients";
+import MyAppointments from "./pages/my-appointments";
+import PatientRegistration from "./pages/patient-registration";
+import PatientList from "./pages/patient-list";
+import Appointments from "./pages/appointments";
 
 function App() {
   
@@ -33,6 +38,11 @@ function App() {
           <Route path="/" element={<Home />} >
             <Route path="/doctors" element={<Doctors/>}></Route>
             <Route path="/healty-services" element={<HealtyServices/>}></Route>
+            <Route path="/my-patients" element={<MyPatient/>}></Route>
+            <Route path="/my-appointments" element={<MyAppointments/>}></Route>
+            <Route path="/patient-registration" element={<PatientRegistration/>}></Route>
+            <Route path="/patient-list" element={<PatientList/>}></Route>
+            <Route path="/appointments" element={<Appointments/>}></Route>
           </Route>
           <Route path="/sign-in" element={<SignIn />}></Route>
           <Route path="/sign-up" element={<SignUp />}></Route>

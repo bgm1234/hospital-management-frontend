@@ -15,11 +15,11 @@ const Home = () => {
                 <ul style={{ fontWeight: "bold" }}>
                     <li style={{ marginBottom: '8px' }}><Link to={"/doctors"}>Doktorlar</Link></li>
                     <li style={{ marginBottom: '8px' }}><Link to={"/healty-services"}>Hizmetler</Link></li>
-                    <li style={{ marginBottom: '8px' }}><Link >Hastalarım</Link></li>
-                    <li style={{ marginBottom: '8px' }}><Link >Randevularım</Link></li>
-                    <li style={{ marginBottom: '8px' }}><Link >Hasta Kayıt</Link></li>
-                    <li style={{ marginBottom: '8px' }}><Link >Hasta Listesi</Link></li>
-                    <li style={{ marginBottom: '8px' }}><Link >Randevular</Link></li>
+                    <li style={{ marginBottom: '8px' }}><Link to={"/my-patients"} >Hastalarım</Link></li>
+                    <li style={{ marginBottom: '8px' }}><Link to={"/my-appointments"} >Randevularım</Link></li>
+                    <li style={{ marginBottom: '8px' }}><Link to={"/patient-registration"} >Hasta Kayıt</Link></li>
+                    <li style={{ marginBottom: '8px' }}><Link to={"/patient-list"}>Hasta Listesi</Link></li>
+                    <li style={{ marginBottom: '8px' }}><Link to={"/appointments"} >Randevular</Link></li>
                 </ul>
             </div>
             <div  style={{ padding: 20 }}>
