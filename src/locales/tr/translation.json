@@ -1,0 +1,17 @@
+{
+      "welcome": "Hoş Geldin!",
+      "login": "Giriş Yap",
+      "register": "Kayıt Ol",
+      "email": "Eposta",
+      "password": "Şifre",
+      "clear": "Temizle",
+      "userName": "Kullanıcı Adı",
+      "name": "Adı",
+      "surname": "Soyadı",
+      "passwordAgain": "Şifre Doğrulama",
+      "forgotPassword": "Şifrenizi mi unuttunuz ?",
+      "I forgot my password":"Şifremi Unuttum",
+      "Already have an account? Sign in":"Zaten hesabınız var mı? Giriş yap"
+}
+  
+  
