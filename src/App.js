@@ -21,7 +21,7 @@ function App() {
   return (
     <div>
       <div >
-        <AppBar position="static">
+        <AppBar position="fixed">
           <Toolbar>
             <Button component={Link} to={"/"}>
               <img
@@ -54,7 +54,7 @@ function App() {
           </Toolbar>
         </AppBar>
       </div>
-      <div>
+      <div style={{ marginTop: "80px" }}>
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="/doctors" element={<Doctors />}></Route>

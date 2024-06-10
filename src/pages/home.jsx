@@ -16,9 +16,8 @@ const Home = () => {
         setOutletActive(location.pathname == '/');
     }, [location.pathname]);
     return (
-        <div style={{ display: "flex" }}>
-            <p>{(Home.body)}</p>
-            <div style={{ width: 150, backgroundColor: "#f0f0f0", padding: 20, minHeight: 600 }}>
+        <div >
+            <div style={{ width: 150, backgroundColor: "#f0f0f0", padding: 20, position:"fixed",minHeight: '100vh' }}>
                 <ul style={{ fontWeight: "bold" }}>
                     <li style={{ marginBottom: '8px' }}><Link to={"/healty-services"}>{t("departments")}</Link></li>
                     <li style={{ marginBottom: '8px' }}><Link to={"/doctors"}>{t("doctors")}</Link></li>
@@ -29,7 +28,7 @@ const Home = () => {
                     <li style={{ marginBottom: '8px' }}><Link to={"/appointments"} >{t("appointments")}</Link></li>
                 </ul>
             </div>
-            <div style={{ padding: 20 }}>
+            <div style={{ marginLeft: 190, padding: 20 }}>
                 {outletActive && (
                     <div>
                         Outlet aktif olduğunda görüntülenmeyecek.
