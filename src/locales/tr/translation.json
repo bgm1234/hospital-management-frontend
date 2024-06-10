@@ -11,7 +11,22 @@
       "passwordAgain": "Şifre Doğrulama",
       "forgotPassword": "Şifrenizi mi unuttunuz ?",
       "I forgot my password":"Şifremi Unuttum",
-      "Already have an account? Sign in":"Zaten hesabınız var mı? Giriş yap"
+      "Already have an account? Sign in":"Zaten hesabınız var mı? Giriş yap",
+      "all branches":"Tüm Branşlar",
+      "cardiology":"Kardiyoloji",
+      "dermatology": "Dermatoloji",
+      "neurology": "Nöroloji",
+      "oncology":"Onkoloji",
+      "doctors":"Doktorlar",
+      "internalMedicine":"Dahiliye",
+      "createAnAppointment":"Randevu Oluştur",
+      "departments":"Tıbbi Birimlerimiz",
+      "myPatients":"Hastalarım",
+      "myAppointments":"Randevularım",
+      "patientRegistration":"Hasta Kayıt",
+      "patientList":"Hasta Listesi",
+      "appointments":"Randevualr"
+      
 }
   
   
