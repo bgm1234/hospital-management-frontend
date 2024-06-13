@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "health_libraries",
+  "info": {
+    "singularName": "health-library",
+    "pluralName": "health-libraries",
+    "displayName": "HealthLibrary",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

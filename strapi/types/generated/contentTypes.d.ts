@@ -362,121 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAppointmentAppointment extends Schema.CollectionType {
-  collectionName: 'appointments';
-  info: {
-    singularName: 'appointment';
-    pluralName: 'appointments';
-    displayName: 'Appointment';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    day: Attribute.Date;
-    time: Attribute.Time;
-    patients: Attribute.Relation<
-      'api::appointment.appointment',
-      'oneToMany',
-      'api::patient.patient'
-    >;
-    users_permissions_users: Attribute.Relation<
-      'api::appointment.appointment',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::appointment.appointment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::appointment.appointment',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiBrachBrach extends Schema.CollectionType {
-  collectionName: 'braches';
-  info: {
-    singularName: 'brach';
-    pluralName: 'braches';
-    displayName: 'Brach';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    users: Attribute.Relation<
-      'api::brach.brach',
-      'oneToMany',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::brach.brach',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::brach.brach',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPatientPatient extends Schema.CollectionType {
-  collectionName: 'patients';
-  info: {
-    singularName: 'patient';
-    pluralName: 'patients';
-    displayName: 'Patient';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    phone: Attribute.Integer;
-    tc: Attribute.Integer;
-    email: Attribute.Email;
-    birthday: Attribute.Date;
-    sex: Attribute.String;
-    allergy: Attribute.String;
-    bloodType: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::patient.patient',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::patient.patient',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -915,6 +800,187 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAppointmentAppointment extends Schema.CollectionType {
+  collectionName: 'appointments';
+  info: {
+    singularName: 'appointment';
+    pluralName: 'appointments';
+    displayName: 'Appointment';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    day: Attribute.Date;
+    time: Attribute.Time;
+    patients: Attribute.Relation<
+      'api::appointment.appointment',
+      'oneToMany',
+      'api::patient.patient'
+    >;
+    users_permissions_users: Attribute.Relation<
+      'api::appointment.appointment',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::appointment.appointment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::appointment.appointment',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBrachBrach extends Schema.CollectionType {
+  collectionName: 'braches';
+  info: {
+    singularName: 'brach';
+    pluralName: 'braches';
+    displayName: 'Brach';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    users: Attribute.Relation<
+      'api::brach.brach',
+      'oneToMany',
+      'plugin::users-permissions.user'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::brach.brach',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::brach.brach',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHealthLibraryHealthLibrary extends Schema.CollectionType {
+  collectionName: 'health_libraries';
+  info: {
+    singularName: 'health-library';
+    pluralName: 'health-libraries';
+    displayName: 'HealthLibrary';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Blocks;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::health-library.health-library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::health-library.health-library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeatlhPackHeatlhPack extends Schema.CollectionType {
+  collectionName: 'heatlh_packs';
+  info: {
+    singularName: 'heatlh-pack';
+    pluralName: 'heatlh-packs';
+    displayName: 'HeatlhPack';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    description: Attribute.Blocks;
+    title: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::heatlh-pack.heatlh-pack',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::heatlh-pack.heatlh-pack',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPatientPatient extends Schema.CollectionType {
+  collectionName: 'patients';
+  info: {
+    singularName: 'patient';
+    pluralName: 'patients';
+    displayName: 'Patient';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    phone: Attribute.Integer;
+    tc: Attribute.Integer;
+    email: Attribute.Email;
+    birthday: Attribute.Date;
+    sex: Attribute.String;
+    allergy: Attribute.String;
+    bloodType: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::patient.patient',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::patient.patient',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -925,9 +991,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::appointment.appointment': ApiAppointmentAppointment;
-      'api::brach.brach': ApiBrachBrach;
-      'api::patient.patient': ApiPatientPatient;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -936,6 +999,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::appointment.appointment': ApiAppointmentAppointment;
+      'api::brach.brach': ApiBrachBrach;
+      'api::health-library.health-library': ApiHealthLibraryHealthLibrary;
+      'api::heatlh-pack.heatlh-pack': ApiHeatlhPackHeatlhPack;
+      'api::patient.patient': ApiPatientPatient;
     }
   }
 }

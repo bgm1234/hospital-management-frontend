@@ -5,7 +5,7 @@ import Home from "./pages/home";
 import SignUp from "./pages/sign-up";
 import SignIn from "./pages/sign-in";
 import Doctors from "./pages/doctors";
-import HealtyServices from "./pages/healty-services";
+import HealthServices from "./pages/health-services";
 import MyPatient from "./pages/my-patients";
 import MyAppointments from "./pages/my-appointments";
 import PatientRegistration from "./pages/patient-registration";
@@ -58,7 +58,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="/doctors" element={<Doctors />}></Route>
-            <Route path="/healty-services" element={<HealtyServices />}></Route>
+            <Route path="/health-services" element={<HealthServices />}></Route>
             <Route path="/my-patients" element={<MyPatient />}></Route>
             <Route path="/my-appointments" element={<MyAppointments />}></Route>
             <Route

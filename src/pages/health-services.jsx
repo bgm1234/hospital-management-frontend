@@ -1,8 +1,8 @@
 import React from "react";
 
-const HealtyServices =()=>{
+const HealthServices =()=>{
     return(
         <div>sağlık hizmetleri </div>
     )
 }
-export default HealtyServices
+export default HealthServices

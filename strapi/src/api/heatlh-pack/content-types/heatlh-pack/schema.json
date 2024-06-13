@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "heatlh_packs",
+  "info": {
+    "singularName": "heatlh-pack",
+    "pluralName": "heatlh-packs",
+    "displayName": "HeatlhPack",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "blocks"
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
