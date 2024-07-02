@@ -58,8 +58,8 @@ const Doctors = () => {
     }, [branches, filteredDoctors,selectedBranch]);
 
 
-    const handleBranchChange = (event) => {
-        setSelectedBranch(event.target.value);
+    const handleBranchChange = (e) => {
+        setSelectedBranch(e.target.value);
     };
    
     return (
