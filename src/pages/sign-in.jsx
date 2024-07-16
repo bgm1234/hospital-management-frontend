@@ -8,7 +8,7 @@ import { useAuthContext } from "../context/AuthContext";
 
 
 const SignIn = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -18,25 +18,24 @@ const SignIn = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(null);
+
         try {
             const response = await axios.post('http://localhost:1337/api/auth/local', { "identifier": email, "password": password });
-            const { jwt, user } = response.data; // Gelen yanıtın token ve kullanıcı bilgilerini alıyoruz.
+            const { jwt, user } = response.data;
             console.log(jwt, user);
-            const branchResponse = await axios.get(`http://localhost:1337/api/braches?populate=*`);
-            const branch = branchResponse.data;
-            let userBranch = null;
 
-            branch.data.forEach(branch => {
-                branch.attributes.users.data.forEach(userObj => {
-                    if (userObj.id === user.id) {
-                        userBranch = branch.attributes.name;
-                    }
-                });
-            });
+            const branchResponse = await axios.get(`http://localhost:1337/api/braches?populate=*`);
+            const branches = branchResponse.data.data;
+
+            const userBranch = branches.find(branch =>
+                branch.attributes.users.data.some(userObj => userObj.id === user.id)
+            )?.attributes.name;
+
             if (userBranch) {
-                user.branch = userBranch; // Branch bilgisini user nesnesine ekleyin
+                user.branch = userBranch;
             }
-            login(jwt, user); // login fonksiyonunu jwt ve güncellenmiş user nesnesi ile çağırın
+
+            login(jwt, user);
             navigate('/');
 
         } catch (err) {

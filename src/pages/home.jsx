@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import axios from 'axios';
-import HomeCard from '../cards/home-card';
+import HomeCard from '../component/cards/home-card';
 
 
 const Home = () => {
