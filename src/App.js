@@ -13,6 +13,7 @@ import PatientList from "./pages/patient-list";
 import Appointments from "./pages/appointments";
 import { useTranslation } from "react-i18next";
 import { useAuthContext } from "../src/context/AuthContext";
+import PatientProfile from "./pages/patient-profile";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -77,6 +78,7 @@ function App() {
             <Route path="/health-services" element={<HealthServices />}></Route>
             <Route path="/my-patients" element={<MyPatient />}></Route>
             <Route path="/my-appointments" element={<MyAppointments />}></Route>
+            <Route path="/patient-profile" element={<PatientProfile/>}></Route>
             <Route
               path="/patient-registration"
               element={<PatientRegistration />}

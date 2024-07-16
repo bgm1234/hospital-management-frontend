@@ -943,6 +943,36 @@ export interface ApiHeatlhPackHeatlhPack extends Schema.CollectionType {
   };
 }
 
+export interface ApiMedicalUnitMedicalUnit extends Schema.CollectionType {
+  collectionName: 'medical_units';
+  info: {
+    singularName: 'medical-unit';
+    pluralName: 'medical-units';
+    displayName: 'MedicalUnit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::medical-unit.medical-unit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::medical-unit.medical-unit',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPatientPatient extends Schema.CollectionType {
   collectionName: 'patients';
   info: {
@@ -961,7 +991,6 @@ export interface ApiPatientPatient extends Schema.CollectionType {
     email: Attribute.Email;
     birthday: Attribute.Date;
     sex: Attribute.String;
-    allergy: Attribute.String;
     bloodType: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1003,6 +1032,7 @@ declare module '@strapi/types' {
       'api::brach.brach': ApiBrachBrach;
       'api::health-library.health-library': ApiHealthLibraryHealthLibrary;
       'api::heatlh-pack.heatlh-pack': ApiHeatlhPackHeatlhPack;
+      'api::medical-unit.medical-unit': ApiMedicalUnitMedicalUnit;
       'api::patient.patient': ApiPatientPatient;
     }
   }

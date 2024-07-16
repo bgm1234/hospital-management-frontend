@@ -30,9 +30,6 @@
     "sex": {
       "type": "string"
     },
-    "allergy": {
-      "type": "string"
-    },
     "bloodType": {
       "type": "string"
     }

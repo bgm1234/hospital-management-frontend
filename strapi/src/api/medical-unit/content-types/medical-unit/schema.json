@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "medical_units",
+  "info": {
+    "singularName": "medical-unit",
+    "pluralName": "medical-units",
+    "displayName": "MedicalUnit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    }
+  }
+}
